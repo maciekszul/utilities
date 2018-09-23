@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import os
 import math
+import itertools
 
 def checkEqual(a):
     """
