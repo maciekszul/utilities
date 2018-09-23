@@ -2,7 +2,7 @@ from __future__ import division
 import numpy as np
 import pandas as pd
 import os
-
+import math
 
 def checkEqual(a):
     """
@@ -29,6 +29,17 @@ def searchN(a, n):
         if check:
             break
     return check
+
+def cart2polar(x, y):
+    """
+    function acommodates for cartesian coordinates 0,0 centered
+    """
+    r = np.sqrt(x**2 + y**2)
+    theta = np.arctan2(y, x)
+    if theta < 0:
+        theta = theta + (math.pi * 2)
+    return r, theta
+
 
 
 def pairwise(iterable):
