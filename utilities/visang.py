@@ -7,11 +7,11 @@ class VisualAngle():
 
 	def __init__(self, pix_w, pix_h, cm_w, cm_h, cm_dist):
 		self.settings = dict()
-		self.settings['pix_h'] = pix_h
-		self.settings['pix_w'] = pix_w
-		self.settings['cm_h'] = cm_h
-		self.settings['cm_w'] = cm_w
-		self.settings['cm_dist'] = cm_dist
+		self.settings["pix_h"] = pix_h
+		self.settings["pix_w"] = pix_w
+		self.settings["cm_h"] = cm_h
+		self.settings["cm_w"] = cm_w
+		self.settings["cm_dist"] = cm_dist
 
 
 	def print_all(self):
@@ -20,15 +20,15 @@ class VisualAngle():
 		"""
 		k = self.settings.keys()
 		for i in k:
-			print "{0}: {1}".format(i, self.settings[i])
+			print("{0}: {1}".format(i, self.settings[i]))
 
 
 	def pixDeg(self):
 		"""
 		Returns size of a single pixel in degrees
 		"""
-		pd = degrees(atan2(.5 * self.settings['cm_h'], self.settings['cm_dist'])) / (.5 * self.settings['pix_h'])
-		self.settings['pix_in_deg'] = pd
+		pd = degrees(atan2(.5 * self.settings["cm_h"], self.settings["cm_dist"])) / (.5 * self.settings["pix_h"])
+		self.settings["pix_in_deg"] = pd
 		return pd
 
 
@@ -36,8 +36,8 @@ class VisualAngle():
 		"""
 		Returns size of a pixel in centimeters. 
 		"""
-		pc = self.settings['cm_h'] / self.settings['pix_h']
-		self.settings['pix_in_cm'] = pc
+		pc = self.settings["cm_h"] / self.settings["pix_h"]
+		self.settings["pix_in_cm"] = pc
 		return pc
 
 
@@ -45,8 +45,8 @@ class VisualAngle():
 		"""
 		Returns size of a centimeter in pixels. 
 		"""
-		cp = self.settings['pix_h'] / self.settings['cm_h']
-		self.settings['cm_in_pix'] = cp
+		cp = self.settings["pix_h"] / self.settings["cm_h"]
+		self.settings["cm_in_pix"] = cp
 		return cp
 
 
@@ -56,7 +56,7 @@ class VisualAngle():
 		Returns size of a degree in pixels. 
 		"""
 		dp = 1./ self.pixDeg()
-		self.settings['deg_in_pix'] = dp
+		self.settings["deg_in_pix"] = dp
 		return dp
 
 
@@ -65,7 +65,7 @@ class VisualAngle():
 		Returns size of a degree in centimeters.
 		"""
 		dc = self.degPix() * self.pixCm()
-		self.settings['deg_in_cm'] = dc
+		self.settings["deg_in_cm"] = dc
 		return dc
 
 
@@ -74,7 +74,7 @@ class VisualAngle():
 		Returns size of a centimeter in degrees. 
 		"""
 		cd = self.cmPix() * self.degPix()
-		self.settings['cm_in_deg'] = cd
+		self.settings["cm_in_deg"] = cd
 		return cd
 
 
